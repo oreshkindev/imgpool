@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "dae403eb-e5d2-473e-9c68-8299ef6e17ad",
+		"name": "Imgpool",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PostImage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "width",
+							"value": "300",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "height",
+							"value": "300",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"contentType": "",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/v1/image",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetImage",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/image/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/v1/image/download/XVlBzgbaiC1.png",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"image",
+						"download",
+						"XVlBzgbaiC1.png"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

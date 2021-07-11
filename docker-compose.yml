@@ -1,0 +1,38 @@
+version: "3"
+services:
+  app:
+    container_name: imgpool
+    build: .
+    ports:
+      - 9000:9000
+    restart: on-failure
+    volumes:
+      - api:/usr/src/app/
+    depends_on:
+      - docker-postgres
+    networks:
+      - imgpool
+
+  docker-postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=59d0b3abd0af9060cd66b1207
+      - POSTGRES_DB=imgpool
+      - DATABASE_HOST=docker-postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - database_postgres:/var/lib/postgresql/data
+    networks:
+      - imgpool
+
+volumes:
+  api:
+  database_postgres:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  imgpool:
+    driver: bridge

@@ -1,0 +1,19 @@
+# Server configurations
+server:
+  host: 127.0.0.1
+  port: 9000
+  queue: 3
+  workers: 2
+  duration: 5 #sec
+  api: /api/v1/
+  timeout: 120 #sec
+  hash: 10
+  path: ./ #docker
+
+# Database configurations
+database:
+  user: postgres
+  pass: 59d0b3abd0af9060cd66b1207 #docker
+  host: docker-postgres #docker
+  port: 5432
+  table: imgpool

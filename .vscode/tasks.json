@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "go build -o main cmd/server/main.go",
+      "options": {
+        "env": {
+          "GOOS": "linux",
+          "GOARCH": "amd64"
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Testing",
+      "type": "shell",
+      "command": "go test ./...",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
